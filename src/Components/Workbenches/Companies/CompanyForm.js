@@ -169,7 +169,7 @@ const FormikCompForm = withFormik({
         }
       },
     handleSubmit(values, { props: { handleSave } }) {
-        console.log(values)
+        // console.log(values)
 
         handleSave(values)
     }

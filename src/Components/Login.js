@@ -39,8 +39,8 @@ class Login extends Component {
 const FormikLogin = withFormik({
     mapPropsToValues() {
         return {
-            email: 'bob@example.com',
-            password: 'red12345'
+            email: '',
+            password: ''
         }
     },
     handleSubmit(values, { props: { login } }) {
