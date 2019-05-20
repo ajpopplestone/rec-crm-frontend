@@ -52,11 +52,11 @@ export function startRouter(stores) {
     // update url on state changes
     autorun(() => {
         let path = store.currentPath
-        if(candStore.openCand && store.workbench === 'candidates'){
+        if(candStore.openCand && store.workbench === 'candidates' && candStore.openCand.id){
             path = path + candStore.openCand.id
-        } else if (compStore.openComp && store.workbench === 'companies') {
+        } else if (compStore.openComp && store.workbench === 'companies' && compStore.openComp.id) {
             path = path + compStore.openComp.id
-        } else if (bookStore.openBook && store.workbench === 'bookings') {
+        } else if (bookStore.openBook && store.workbench === 'bookings' && bookStore.openBook.id) {
             path = path + bookStore.openBook.id
         } 
         if (path !== window.location.pathname)
