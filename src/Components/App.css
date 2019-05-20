@@ -1,0 +1,125 @@
+.app {
+  height: 100vh
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+td {
+  padding: 3px !important
+}
+
+th {
+  padding: 3px !important
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.ant-modal-body {
+  min-height: 600px;
+}
+
+.deleteModal .ant-modal-body {
+  min-height: 100px;
+}
+
+.login {
+  width: 30%;
+  min-height: 200px;
+  margin: auto;
+  margin-top: 20%;
+  padding: 10px;
+  background-color: yellow;
+  border: solid black 1px
+}
+
+.searchBar div {
+  display: inline-block
+}
+
+.searchEnter {
+  width: 80%
+}
+
+.logout {
+  float: right;
+  margin: 0 20px;
+  font-size: 15px
+}
+
+.BookTableHeader{
+  padding-bottom: 40px
+}
+
+.BookingsNew{
+  float: left
+}
+
+.BookingsRefresh {
+  float: right
+}
+
+.FormInFormDiv{
+  border: dashed lightgrey 1px;
+  padding: 10px
+}
+
+.nameColumn {
+  background-color: white
+}
+
+/* .plannerName{
+  background-color: #F5D4D3;
+  padding: auto;
+  height: 100%;
+  width: 100%;
+  min-height: 51px;
+  border-radius: 5px
+} */
+
+.nameText {
+  vertical-align: middle;
+}
+
+.errors {
+  color: red
+}
+
+.infoDiv {
+  border: dashed lightgrey 1px
+}
+
+.UIDDiv {
+  border: dashed lightgrey 1px;
+  margin-top: 20px;
+}
