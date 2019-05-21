@@ -6,25 +6,28 @@ export function startRouter(stores) {
 
     const routerRefresh = (workbench, id) => {  
         let details = {
-            workbench,
-            id
+            workbench
         }
         
         switch(workbench) {
             case 'candidates':
                 details.searchRefresh = candStore.fetchCandidateData
                 details.openRecord = candStore.setOpenCand
+                details.id = id
                 store.refreshPage(details)
                 break
             case 'companies':
                 details.searchRefresh = compStore.fetchCompaniesData
                 details.openRecord = compStore.setOpenComp
+                details.id = id
                 store.refreshPage(details)
                 break
             case 'bookings':
                 details.searchRefresh = bookStore.fetchBookingData
                 details.openRecord = bookStore.setOpenBook
-                details.id = {id}
+                if(id) {
+                    details.id = {id}
+                }
                 store.refreshPage(details)
                 break      
             default:

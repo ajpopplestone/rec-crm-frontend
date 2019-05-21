@@ -83,14 +83,14 @@ class RecApp extends Component {
               <span className="logout" onClick={store.logout}>Logout</span>
             </Header>
             <Content 
-              style={{ overflow: 'hidden'}}
+              style={{ overflow: 'hidden', paddingBottom: '50px'}}
               >
               <Workbench workbench={store.workbench} />
             </Content>
           </Layout>     
           <Footer 
             className="footer"
-            style={{ background: '#F5D4D3', height: '8vh' }}>Recruitment Software (C) 2019</Footer>
+            style={{ background: '#F5D4D3', height: '40px' }}>Recruitment Software (C) 2019</Footer>
         </Layout>
       </div>
     );

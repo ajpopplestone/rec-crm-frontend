@@ -15,6 +15,8 @@ class bookStore {
     @observable openBook = null
     @observable saveState = null
 
+    @observable bookingError = null
+
     constructor(client) {
         this.client = client
     }
@@ -217,6 +219,8 @@ class bookStore {
     @action.bound
     async createBooking(data, callback) {
         // console.log('create booking')
+        console.log(data)
+
         const variables = {
             data: {
                 ...data,
@@ -225,18 +229,28 @@ class bookStore {
         }
         // console.log(variables)
         // variables.data.date = variables.data.date.format()
-        // console.log(variables)
+        console.log(variables)
         
-        await this.client.mutate({
+        const res = await this.client.mutate({
             mutation: CREATE_BOOKING, 
             variables
         })
+
+        console.log(res)
+
+        runInAction(() => {
+            if(res.errors) {
+                console.log(res.errors[0].message)
+                this.bookingError(res.errors[0].message)
+            } else {
+                if(this.saveState === "OK") {
+                    this.openBook = null
+                } else if (this.saveState === "APPLY") {
+                    // console.log(this.openBook)
+                }
+            }
+        })
         
-        if(this.saveState === "OK") {
-            this.openBook = null
-        } else if (this.saveState === "APPLY") {
-            // console.log(this.openBook)
-        }
 
 
         this.fetchBookingData()

@@ -14,6 +14,7 @@ import { COMPANY_SHORT_SEARCH } from '../../../queries/companyQueries'
 import { createCodeQuery } from '../../../queries/codeQueries'
 
 import * as Yup from 'yup'
+// import bookStore from '../../../stores/bookStore';
 
 
 
@@ -125,6 +126,7 @@ class BookForm extends Component {
                     <p>{errors.candidate}</p>
                     <p>{errors.company}</p>
                     <p>{errors.role}</p>
+                    <p>{this.props.bookingError}</p>
                 </div>
                 <Button onClick={() => this.handleSave("OK")} type="primary">OK</Button>
                 <Button onClick={() => this.handleSave("APPLY")} >Apply</Button>

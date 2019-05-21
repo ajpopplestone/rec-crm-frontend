@@ -17,6 +17,7 @@ class Bookings extends Component {
         
     render() {
         const { candStore, bookStore } = this.props
+        console.log(this.props)
         // console.log('bookings workbench')
         // console.log(bookStore.plannerStart)
         // console.log(bookStore.plannerDays)
@@ -37,7 +38,8 @@ class Bookings extends Component {
                                         handleSave={bookStore.saveBook}
                                         handleDelete={bookStore.deleteBooking} 
                                         setSaveState={bookStore.setSaveState}
-                                        handleCancel={() => bookStore.setOpenBook(null)}/> }
+                                        handleCancel={() => bookStore.setOpenBook(null)}
+                                        bookingError={bookStore.bookingError}/> }
                             </TabPane>
                             <TabPane tab="Info" key="2">
                                 {bookStore.openBook && bookStore.openBook.id && 

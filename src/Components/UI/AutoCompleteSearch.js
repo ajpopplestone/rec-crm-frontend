@@ -15,7 +15,7 @@ class AutoCompleteSearch extends Component {
         }
 
     handleBlur = (value) => {
-        console.log(value)
+        // console.log(value)
         if(!value) {
             this.props.setFieldValue(this.props.name, null)
         }
