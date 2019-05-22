@@ -19,6 +19,7 @@ class Companies extends Component {
                     newRecord={() => compStore.setOpenComp("new")} 
                     updateSearchTerms={compStore.updateSearchTerms}
                     fetchData={compStore.fetchCompaniesData}
+                    value={compStore.searchTerms}
                     />
                 <CompaniesTable />
             </div>

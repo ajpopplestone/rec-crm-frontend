@@ -17,7 +17,7 @@ class Bookings extends Component {
         
     render() {
         const { candStore, bookStore } = this.props
-        console.log(this.props)
+        // console.log(this.props)
         // console.log('bookings workbench')
         // console.log(bookStore.plannerStart)
         // console.log(bookStore.plannerDays)

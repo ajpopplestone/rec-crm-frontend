@@ -219,7 +219,7 @@ class bookStore {
     @action.bound
     async createBooking(data, callback) {
         // console.log('create booking')
-        console.log(data)
+        // console.log(data)
 
         const variables = {
             data: {
@@ -229,14 +229,14 @@ class bookStore {
         }
         // console.log(variables)
         // variables.data.date = variables.data.date.format()
-        console.log(variables)
+        // console.log(variables)
         
         const res = await this.client.mutate({
             mutation: CREATE_BOOKING, 
             variables
         })
 
-        console.log(res)
+        // console.log(res)
 
         runInAction(() => {
             if(res.errors) {

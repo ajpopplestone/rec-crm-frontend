@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 
 export const GET_ALL_COMPANIES = gql`
     query($query: String) {
-        companies(query: $query) {
+        companies(query: $query, orderBy: name_ASC) {
             id
             name
             email
@@ -89,7 +89,7 @@ export const GET_COMPANY = gql`
 
 export const COMPANY_SHORT_SEARCH = gql`
     query($query: String, $first: Int!) {
-        companies(query: $query, first: $first, ) {
+        companies(query: $query, first: $first, orderBy: name_ASC) {
             id
             name
         }

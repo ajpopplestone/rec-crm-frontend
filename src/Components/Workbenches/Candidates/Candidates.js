@@ -18,6 +18,7 @@ class Candidates extends Component {
                     newRecord={() => candStore.setOpenCand("new")} 
                     updateSearchTerms={candStore.updateSearchTerms}
                     fetchData={candStore.fetchCandidateData}
+                    value={candStore.searchTerms}
                     />
                 <CandidatesTable />
             </div>

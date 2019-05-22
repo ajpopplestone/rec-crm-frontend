@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 
 export const GET_ALL_CANDIDATES = gql`
     query($query: String) {
-        candidates(query: $query) {
+        candidates(query: $query, orderBy: surname_ASC) {
             id
             forename
             surname
@@ -30,7 +30,7 @@ export const GET_ALL_CANDIDATES = gql`
 
 export const GET_ALL_CANDS_BOOKINGS = gql`
     query($query: String) {
-        candidates(query: $query) {
+        candidates(query: $query, orderBy: surname_ASC) {
             id
             forename
             surname
@@ -61,6 +61,10 @@ export const GET_ALL_CANDS_BOOKINGS = gql`
                 role {
                     shortCode
                     description
+                    businessType {
+                        id
+                        colour
+                    }
                 }
                 startTime
                 endTime
@@ -143,7 +147,7 @@ export const GET_CANDIDATE = gql`
 
 export const CANDIDATE_SHORT_SEARCH = gql`
     query($query: String, $first: Int!) {
-        candidates(query: $query, first: $first, ) {
+        candidates(query: $query, first: $first, orderBy: surname_ASC) {
             id
             forename
             surname

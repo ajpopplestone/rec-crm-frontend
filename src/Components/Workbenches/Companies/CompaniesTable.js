@@ -28,10 +28,12 @@ class CompaniesTable extends Component {
         title: 'Name',
         dataIndex: 'name',
         key: 'name',
+        sorter: (a, b) => a.name.localeCompare(b.name)
       }, {
         title: 'Website',
         dataIndex: 'website',
         key: 'website',
+        sorter: (a, b) => a.website.localeCompare(b.website)
       }, {
         title: 'Email',
         dataIndex: 'email',
@@ -43,19 +45,23 @@ class CompaniesTable extends Component {
       }, {
         title: 'Postcode',
         dataIndex: 'postcode',
-        key: 'postcode'
+        key: 'postcode',
+        sorter: (a, b) => a.postcode.localeCompare(b.postcode)
       }, {
         title: 'Consultant',
         dataIndex: 'consultant',
-        key: 'constultant'
+        key: 'constultant',
+        sorter: (a, b) => a.consultant.localeCompare(b.consultant)
       }, {
         title: 'Business Type',
         dataIndex: 'businessType',
-        key: 'businessType'
+        key: 'businessType',
+        sorter: (a, b) => a.businessType.localeCompare(b.businessType)
       }, {
         title: 'Status',
         dataIndex: 'status',
         key: 'status',
+        sorter: (a, b) => a.status.localeCompare(b.status)
       }];
 
     displayTable = () => {

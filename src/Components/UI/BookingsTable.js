@@ -43,6 +43,8 @@ class BookingsTable extends Component {
                                 break
                             case 'candidate':
                                 currentBook.candidate = booking.candidate ? `${booking.candidate.forename} ${booking.candidate.surname}` : null
+                                currentBook.forename = booking.candidate ? `${booking.candidate.forename}` : null
+                                currentBook.surname = booking.candidate ? `${booking.candidate.surname}` : null
                                 break
                             case 'date':
                                 currentBook.date = booking.date ? moment(booking.date).format("dddd, Do MMMM YYYY") : null
@@ -56,6 +58,7 @@ class BookingsTable extends Component {
                     }
                     bookings.push(currentBook)
                 }
+                console.log(bookings)
                 return bookings       
             }
         return null

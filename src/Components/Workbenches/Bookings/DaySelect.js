@@ -49,13 +49,14 @@ class DaySelect extends Component {
                             newRecord={() => bookStore.setOpenBook({id: 'new'})} 
                             updateSearchTerms={bookStore.updateSearchTerms}
                             fetchData={bookStore.fetchBookingData}
+                            value={bookStore.searchTerms}
                         />
                     </Col>
                     <Col span={6}>
                         <div style={{width: '400px', margin: 'auto'}}>
                             <span>Week Start: </span>
                             <DatePicker 
-                                defaultValue={bookStore.plannerStart} 
+                                value={bookStore.plannerStart} 
                                 placeholder={bookStore.plannerStart.format(dateFormat)} 
                                 format={dateFormat} 
                                 onChange={bookStore.setPlannerStart}/>

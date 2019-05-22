@@ -24,8 +24,8 @@ import App from './Components/App';
 import * as serviceWorker from './serviceWorker';
 
 const httpLink = createHttpLink({
-    // uri: 'http://localhost:4000'
-    uri: 'https://peaceful-savannah-69762.herokuapp.com/'
+    uri: 'http://localhost:4000'
+    // uri: 'https://peaceful-savannah-69762.herokuapp.com/'
   })
 
 const authLink = setContext((_, { headers }) => {

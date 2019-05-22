@@ -14,11 +14,15 @@ class SearchBar extends Component {
                 <div className="searchEnter">
                     <Search
                         placeholder="Input search text"
-                        
+                        value={this.props.value}
                         onChange={e => this.props.updateSearchTerms(e.target.value)}
                         onSearch={term => this.props.fetchData(term)}
-                    />                
+                    />
                 </div>
+                    <Button 
+                        icon="close-circle" 
+                        onClick={e => this.props.updateSearchTerms(null)}
+                        style={{display:"inline-block"}}/>
             </div>
         )
     }

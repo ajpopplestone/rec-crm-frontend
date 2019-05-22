@@ -38,7 +38,7 @@ export const GET_BOOKING = gql`
 
 export const GET_ALL_CAND_BOOKINGS = gql`
     query candBookings($candId: String!) {
-        bookings(candId: $candId) {
+        bookings(candId: $candId, orderBy: date_ASC) {
             id
             company {
                 id
@@ -66,7 +66,7 @@ export const GET_ALL_CAND_BOOKINGS = gql`
 
 export const GET_ALL_COMP_BOOKINGS = gql`
     query compBookings($compId: String!) {
-        bookings(compId: $compId) {
+        bookings(compId: $compId, orderBy: date_ASC) {
             id
             candidate {
                 id

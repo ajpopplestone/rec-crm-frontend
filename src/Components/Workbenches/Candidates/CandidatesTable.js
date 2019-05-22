@@ -28,10 +28,12 @@ class CandidatesTable extends Component {
         title: 'Forename',
         dataIndex: 'forename',
         key: 'forename',
+        sorter: (a, b) => a.forename.localeCompare(b.forename)
       }, {
         title: 'Surname',
         dataIndex: 'surname',
         key: 'surname',
+        sorter: (a, b) => a.surname.localeCompare(b.surname)
       }, {
         title: 'Email',
         dataIndex: 'email',
@@ -43,19 +45,23 @@ class CandidatesTable extends Component {
       }, {
         title: 'Postcode',
         dataIndex: 'postcode',
-        key: 'postcode'
+        key: 'postcode',
+        sorter: (a, b) => a.postcode.localeCompare(b.postcode)
       }, {
         title: 'Consultant',
         dataIndex: 'consultant',
-        key: 'constultant'
+        key: 'constultant',
+        sorter: (a, b) => a.consultant.localeCompare(b.consultant)
       }, {
         title: 'Role',
         dataIndex: 'role',
-        key: 'role'
+        key: 'role',
+        sorter: (a, b) => a.role.localeCompare(b.role)
       }, {
         title: 'Status',
         dataIndex: 'status',
         key: 'status',
+        sorter: (a, b) => a.status.localeCompare(b.status)
       }];
 
     displayTable = () => {

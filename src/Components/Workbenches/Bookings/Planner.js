@@ -43,7 +43,8 @@ class Planner extends Component {
         key: 'name',
         width: `${this.state.nameWidth}%`,
         className: "nameColumn",
-        render: this.nameRender()
+        render: this.nameRender(),
+        sorter: (a, b) => a.surname.localeCompare(b.surname)
       })
       
       for(let i = 0; i < 7; i++) {
