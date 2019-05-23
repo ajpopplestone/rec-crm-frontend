@@ -58,7 +58,7 @@ class BookingsTable extends Component {
                     }
                     bookings.push(currentBook)
                 }
-                console.log(bookings)
+                // console.log(bookings)
                 return bookings       
             }
         return null

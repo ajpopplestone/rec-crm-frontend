@@ -112,7 +112,7 @@ class CandStore {
 
     @action.bound
     async setOpenCand(cand) {
-        // console.log(cand)
+        console.log(cand)
         if(cand === 'new' || cand === null) {
             this.openCand = cand
         } else {
@@ -162,7 +162,7 @@ class CandStore {
         if(this.saveState === "OK") {
             this.openCand = null
         } else if (this.saveState === "APPLY") {
-            // console.log(this.openCand)
+            this.setOpenCand(this.openCand.id)
         }
 
         this.fetchCandidateData()
@@ -176,15 +176,17 @@ class CandStore {
         }
         // console.log(variables)
         
-        await this.client.mutate({
+        const newCand = await this.client.mutate({
             mutation: CREATE_CANDIDATE, 
             variables
         })
+
+        // console.log(newCand.data.createCandidate.id)
         
         if(this.saveState === "OK") {
             this.openCand = null
         } else if (this.saveState === "APPLY") {
-            // console.log(this.openCand)
+            this.setOpenCand(newCand.data.createCandidate.id)
         }
 
 

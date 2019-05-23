@@ -162,7 +162,7 @@ class Store {
         if(this.saveState === "OK") {
             this.openComp = null
         } else if (this.saveState === "APPLY") {
-            // console.log(this.openComp)
+            this.setOpenComp(this.openComp.id)
         }
 
         this.fetchCompaniesData()
@@ -176,15 +176,17 @@ class Store {
         }
         // console.log(variables)
         
-        await this.client.mutate({
+        const newComp = await this.client.mutate({
             mutation: CREATE_COMPANY, 
             variables
         })
+
+        // console.log(newComp.data.createCompany.id)
         
         if(this.saveState === "OK") {
             this.openComp = null
         } else if (this.saveState === "APPLY") {
-            // console.log(this.openComp)
+            this.setOpenComp(newComp.data.createCompany.id)
         }
 
 

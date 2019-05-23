@@ -30,7 +30,7 @@ class Store {
             this.currentUser = user
             this.workbench = details.workbench 
             details.searchRefresh()
-            if(details.id && details.openRecord) {
+            if(details.openRecord) {
                 details.openRecord(details.id)
             }
         } else {

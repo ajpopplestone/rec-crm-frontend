@@ -4,7 +4,12 @@ import { Input, Button } from 'antd';
 const Search = Input.Search;
 
 class SearchBar extends Component {    
-    
+    handleResetSeachTerms = () => {
+        this.props.updateSearchTerms(null)
+        this.props.fetchData()
+    }
+
+
     render() {
         return (
             <div className="searchBar" >
@@ -16,12 +21,12 @@ class SearchBar extends Component {
                         placeholder="Input search text"
                         value={this.props.value}
                         onChange={e => this.props.updateSearchTerms(e.target.value)}
-                        onSearch={term => this.props.fetchData(term)}
+                        onSearch={this.props.fetchData}
                     />
                 </div>
                     <Button 
                         icon="close-circle" 
-                        onClick={e => this.props.updateSearchTerms(null)}
+                        onClick={this.handleResetSeachTerms}
                         style={{display:"inline-block"}}/>
             </div>
         )

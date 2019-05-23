@@ -25,7 +25,9 @@ export function startRouter(stores) {
             case 'bookings':
                 details.searchRefresh = bookStore.fetchBookingData
                 details.openRecord = bookStore.setOpenBook
-                if(id) {
+                if(id === null) {
+                    details.id = null
+                } else {
                     details.id = {id}
                 }
                 store.refreshPage(details)
@@ -38,11 +40,11 @@ export function startRouter(stores) {
     // update state on url change
     const router = new Router({
         // '/login': () => store.setWorkbench('login'),
-        '/candidates': () => routerRefresh('candidates'),
+        '/candidates': () => routerRefresh('candidates', null),
         '/candidates/:candId': (candId) => routerRefresh('candidates', candId),
-        '/companies': () => routerRefresh('companies'),
+        '/companies': () => routerRefresh('companies', null),
         '/companies/:compId': (compId) => routerRefresh('companies', compId),
-        '/bookings': () => routerRefresh('bookings'),
+        '/bookings': () => routerRefresh('bookings', null),
         '/bookings/:bookId': (bookId) => routerRefresh('bookings', bookId),
     })
     router.configure({

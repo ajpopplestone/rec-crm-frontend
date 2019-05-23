@@ -206,8 +206,7 @@ class bookStore {
         if(this.saveState === "OK") {
             this.openBook = null
         } else if (this.saveState === "APPLY") {
-            // console.log(this.openBook)
-            return true
+            this.setOpenBook(this.openBook.id)
         }
 
         this.fetchBookingData()
@@ -236,7 +235,7 @@ class bookStore {
             variables
         })
 
-        // console.log(res)
+        // console.log(res.data.createBooking.id)
 
         runInAction(() => {
             if(res.errors) {
@@ -246,7 +245,7 @@ class bookStore {
                 if(this.saveState === "OK") {
                     this.openBook = null
                 } else if (this.saveState === "APPLY") {
-                    // console.log(this.openBook)
+                    this.setOpenBook({id: res.data.createBooking.id})
                 }
             }
         })
