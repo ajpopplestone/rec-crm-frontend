@@ -54,12 +54,21 @@ th {
 }
 
 .login {
-  width: 30%;
+  width: 50%;
   min-height: 200px;
   margin: auto;
   margin-top: 20%;
   padding: 10px;
-  background-color: yellow;
+  background-color: lightgrey;
+  border: solid black 1px
+}
+
+.loginInfo {
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+  padding: 10px;
+  background-color: lightgrey;
   border: solid black 1px
 }
 
@@ -121,5 +130,20 @@ th {
 
 .UIDDiv {
   border: dashed lightgrey 1px;
+  margin-top: 20px;
+}
+
+.background {
+  background-image: url(https://picsum.photos/id/1048/1404/936);
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+}
+
+.loginDetails {
   margin-top: 20px;
 }

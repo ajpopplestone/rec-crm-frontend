@@ -64,7 +64,7 @@ class Store {
     }
 
     @action.bound
-    async login(values, callback) {
+    async login(values) {
         const variables = {
             data: {
                 email: values.email,

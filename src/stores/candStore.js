@@ -112,7 +112,7 @@ class CandStore {
 
     @action.bound
     async setOpenCand(cand) {
-        console.log(cand)
+        // console.log(cand)
         if(cand === 'new' || cand === null) {
             this.openCand = cand
         } else {
