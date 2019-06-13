@@ -37,8 +37,8 @@ class Login extends Component {
                 </div>
                 <div className="loginInfo">
                     <p><strong>GitHub:</strong></p>
-                    <p>Frontend: https://github.com/ne4rly0ne/rec-crm-frontend</p>
-                    <p>Backend: https://github.com/ne4rly0ne/rec-crm-backend</p>
+                    <p>Frontend: <a href="https://github.com/ne4rly0ne/rec-crm-frontend">https://github.com/ne4rly0ne/rec-crm-frontend</a></p>
+                    <p>Backend: <a href="https://github.com/ne4rly0ne/rec-crm-backend">https://github.com/ne4rly0ne/rec-crm-backend</a></p>
                 </div>
             </div>
         )
